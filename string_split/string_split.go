@@ -43,7 +43,7 @@ func main() {
 		}
 	}
 	if strPart != "" {
-		sl3 = append(sl3, string(strPart))
+		sl3 = append(sl3, strPart)
 	}
 	fmt.Println(firstString + "-" + strings.Join(sl3, "-"))
 }
