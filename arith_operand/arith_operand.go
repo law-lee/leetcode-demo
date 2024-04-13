@@ -9,6 +9,7 @@ import (
 // 输入字符串长度不超过 100 ，合法的字符包括 ”+, -, *, /, (, )” ， ”0-9” 。
 // 1+2*3
 // 1+3*(5/2-2)+2*5
+// 参考：https://writings.sh/post/arithmetic-expression
 type stack []interface{}
 
 func (s *stack) push(v interface{}) {
