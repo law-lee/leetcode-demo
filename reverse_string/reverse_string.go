@@ -2,7 +2,21 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
+
+func main() {
+	buf := make([]byte, 10000)
+	n, err := os.Stdin.Read(buf)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	s := string(buf[:n])
+	ss := []byte(s)
+	reverseString(ss)
+	fmt.Println(string(ss))
+}
 
 func reverseString(s []byte) {
 	length := len(s)
@@ -11,10 +25,4 @@ func reverseString(s []byte) {
 		s[i], s[j] = s[j], s[i]
 		j--
 	}
-}
-
-func main() {
-	s := []byte{'h', 'e', 'l', 'l', 'o'}
-	reverseString(s)
-	fmt.Println(string(s))
 }
